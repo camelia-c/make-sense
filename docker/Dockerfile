@@ -6,8 +6,9 @@ RUN mkdir /workspace && \
   cd /workspace && \ 
   git clone https://github.com/SkalskiP/make-sense.git && \
   cd make-sense && \
+  npm i -D esbuild && \
   npm install
 
 WORKDIR /workspace/make-sense
 
-ENTRYPOINT ["npm", "start"]
+ENTRYPOINT ["npm", "start", "--", "--host"]
